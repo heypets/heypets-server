@@ -6,9 +6,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class TimestampMixin {
+public class TimestampNotDeletedMixin {
     private Timestamp createdAt = Timestamp.now();
     private Timestamp updatedAt = Timestamp.now();
-    private Timestamp deletedAt = null;
     private Boolean status = true;
 }
