@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    group:
+      local:
+        - local-config
+      dev:
+        - dev-config
+
+      prod:
+        - prod-config
+
+    include:
+      - db

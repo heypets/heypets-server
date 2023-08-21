@@ -1,0 +1,4 @@
+firebase:
+  service:
+    account:
+      key: src/main/resources/static/firebase/heypets-firebase-secret-key.json
