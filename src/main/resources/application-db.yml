@@ -2,3 +2,5 @@ firebase:
   service:
     account:
       key: src/main/resources/static/firebase/heypets-firebase-secret-key.json
+    bucket:
+      url: heypets-firebase.appspot.com
