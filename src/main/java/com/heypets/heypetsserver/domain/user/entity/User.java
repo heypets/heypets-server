@@ -16,7 +16,7 @@ import java.util.Map;
 @Getter
 @Setter
 public class User extends TimestampMixin {
-    public static final String TABLENAME = "Users";
+    public static final String TABLENAME = User.class.getSimpleName();
 
     private String _id;
     private String nickname;

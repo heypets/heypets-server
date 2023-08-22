@@ -15,6 +15,8 @@ import java.util.Map;
 @Getter
 @Setter
 public class Event extends TimestampMixin {
+    public static final String TABLENAME = Event.class.getSimpleName();
+
     private String _id;
     private DocumentReference petId;
     private String title;

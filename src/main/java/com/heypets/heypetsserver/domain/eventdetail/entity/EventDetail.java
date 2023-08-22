@@ -11,6 +11,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class EventDetail {
+    public static final String TABLENAME = EventDetail.class.getSimpleName();
+
     private String _id;
     private DocumentReference eventId;
 

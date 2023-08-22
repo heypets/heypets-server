@@ -15,7 +15,7 @@ import java.util.Map;
 @Getter
 @Setter
 public class Pet extends TimestampMixin {
-    public static final String TABLENAME = "Pets";
+    public static final String TABLENAME = Pet.class.getSimpleName();
 
     private String _id;
     private DocumentReference OwnerId;

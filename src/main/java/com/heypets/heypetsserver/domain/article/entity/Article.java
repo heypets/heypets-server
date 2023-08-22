@@ -8,6 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Article extends TimestampMixin {
+    public static final String TABLENAME = Article.class.getSimpleName();
+
     private String _id;
     private DocumentReference superuser;
     private String title;

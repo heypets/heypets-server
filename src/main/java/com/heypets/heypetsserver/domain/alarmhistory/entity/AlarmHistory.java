@@ -11,6 +11,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AlarmHistory extends TimestampNotDeletedMixin {
+    public static final String TABLENAME = AlarmHistory.class.getSimpleName();
+
     private String _id;
     private DocumentReference userId;
     private DocumentReference eventDetailId;

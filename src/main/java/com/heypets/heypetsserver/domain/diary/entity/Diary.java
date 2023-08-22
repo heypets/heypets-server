@@ -16,6 +16,8 @@ import java.util.Map;
 @Getter
 @Setter
 public class Diary extends TimestampMixin {
+    public static final String TABLENAME = Diary.class.getSimpleName();
+
     private List<Map<String,Object>> imagePaths;
     private String title;
     private Timestamp date;
