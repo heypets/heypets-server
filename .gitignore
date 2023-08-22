@@ -36,5 +36,11 @@ out/
 ### VS Code ###
 .vscode/
 
-### Firebase ###
-src/main/resources/static/firebase/heypets-firebase-secret-key.json
+### hidden ###
+hidden/
+
+### application ###
+src/main/resources/application-ssl.yml
+
+### SSL KEY ###
+src/main/resources/heypets-ssl-key.p12
