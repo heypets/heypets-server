@@ -2,9 +2,7 @@ version: '3'
 services:
   heypetsserver:
     container_name: heypetsserver
-    build: 
-      context: .
-      dockerfile: Dockerfile
+    image: heypetsserver
     networks:
       - heypets-network
 
