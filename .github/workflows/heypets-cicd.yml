@@ -43,12 +43,13 @@ jobs:
       run: ./gradlew build
 
     ## docker build & push to production
-    - name: Docker build & push
+    - name: Docker build & push to ECR
       if: contains(github.ref, 'dev')
       run: |
-          sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          sudo docker build --platform linux/amd64 -t ${{ secrets.DOCKER_REPO }} .
-          sudo docker push ${{ secrets.DOCKER_REPO }}
+          sudo aws ecr get-login-password --region ${{ secrets.ECR_REGION }} | docker login --username ${{ secrets.ECR_USERNAME }} --password-stdin ${{ secrets.ECR_PASSWORD }}
+          sudo docker build --platform linux/amd64 -t ${{ secrets.ECR_REPO }} .
+          sudo docker tag ${{ secrets.ECR_REPO }}:latest ${{ secrets.ECR_PASSWORD }}/heypetsserver:latest
+          sudo docker push ${{ secrets.ECR_PASSWORD }}/heypetsserver:latest
 
     # ## deploy to production
     - name: Deploy to prod
@@ -64,7 +65,7 @@ jobs:
               sudo apt-get update
               sudo docker compose down
               sudo docker rmi $(sudo docker images -q)
-              sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-              sudo docker pull ${{ secrets.DOCKER_REPO }}
+              sudo aws ecr get-login-password --region ${{ secrets.ECR_REGION }} | docker login --username ${{ secrets.ECR_USERNAME }} --password-stdin ${{ secrets.ECR_PASSWORD }}
+              sudo docker pull ${{ secrets.ECR_PASSWORD }}/heypetsserver:latest
               sudo docker image prune -f
               sudo docker compose up -d
