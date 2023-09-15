@@ -1,0 +1,23 @@
+version: '3'
+services:
+  heypetsserver:
+    container_name: heypetsserver
+    image: heypetsserver
+    networks:
+      - heypets-network
+
+    volumes:
+      - ./hidden:/app/hidden
+    
+    ports:
+      - "443:8080"
+
+    restart: always
+
+networks:
+  heypets-network:
+    external: true
+
+#volumes:
+#  heypets-volume:
+#    external: true

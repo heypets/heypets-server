@@ -1,0 +1,6 @@
+firebase:
+  service:
+    account:
+      key: hidden/heypets-firebase-secret-key.json
+    bucket:
+      url: heypets-firebase.appspot.com

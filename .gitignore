@@ -35,3 +35,12 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### hidden ###
+hidden/
+
+### application ###
+src/main/resources/application-ssl.yml
+
+### SSL KEY ###
+src/main/resources/heypets-ssl-key.p12

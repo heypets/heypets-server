@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active:
+      - local
+
+    group:
+      local:
+        - local-config
+
+      dev:
+        - dev-config
+
+      prod:
+        - prod-config
+        - ssl
+
+    include:
+      - db
+      - swagger
