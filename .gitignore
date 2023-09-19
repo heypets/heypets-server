@@ -44,3 +44,6 @@ src/main/resources/application-ssl.yml
 
 ### SSL KEY ###
 src/main/resources/heypets-ssl-key.p12
+
+### AOUTH ###
+src/main/resources/application-auth.yml

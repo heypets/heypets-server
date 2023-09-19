@@ -17,3 +17,4 @@ spring:
     include:
       - db
       - swagger
+      - auth
